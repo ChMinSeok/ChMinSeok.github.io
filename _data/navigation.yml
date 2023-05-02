@@ -2,10 +2,10 @@
 main:
   - title: "Category"
     url: /categories/
-  - title: "Youtube"
-    url: https://www.youtube.com/channel/UCrWBjySeKjUPK_H1l8PZHhQ
   - title: "Tag"
     url: /tags/
+  - title: "Youtube"
+    url: https://www.youtube.com/channel/UCrWBjySeKjUPK_H1l8PZHhQ
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"

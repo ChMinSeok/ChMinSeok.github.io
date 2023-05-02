@@ -11,9 +11,11 @@ layout: archive
       <a href="#{{ year.name }}">
         <strong>{{ year.name }}</strong> <span class="taxonomy__count">{{ year.items | size }}</span>
         {% if page.tags %}
-           {% for tag in page.tags %}
-             <span class="tag">{{ tag }}</span>
-           {% endfor %}
+          {% for tag in page.tags %}
+             {% if site.data.tags contains tag %}
+                <span class="tag">{{ site.data.format[tag] }}</span>
+             {% endif %}
+          {% endfor %}
         {% endif %}
       </a>
     </li>

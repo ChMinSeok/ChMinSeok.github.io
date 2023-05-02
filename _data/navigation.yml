@@ -2,7 +2,7 @@
 main:
   - title: "Category"
     url: /categories/
-  - title: "YouTube"
+  - title: "Youtube"
     url: https://www.youtube.com/channel/UCrWBjySeKjUPK_H1l8PZHhQ
   # - title: "Sample Posts"
   #   url: /year-archive/

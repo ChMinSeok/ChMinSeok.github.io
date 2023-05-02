@@ -17,7 +17,7 @@ future: true
 
 # Site Settings
 locale                   : "en-US"
-title                    : "개발공부"
+title                    : "공부 블로그"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "ChoiMinSeok"

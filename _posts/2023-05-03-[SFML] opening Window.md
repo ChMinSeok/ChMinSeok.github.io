@@ -3,7 +3,7 @@ layout: single
 title: "SFML 윈도우 열기"
 date: "2023-05-03 22:10:20 -0400"
 categories: [SFML]
-tags: []
+tags: [SFML 기초]
 background: ''
 ---
 # SFML에서 윈도우를 여는법

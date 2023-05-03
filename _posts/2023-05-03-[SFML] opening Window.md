@@ -1,13 +1,12 @@
 ---
 layout: single
-title: "SFML 윈도우 열기"
-date: "2023-05-03 22:10:20 -0400"
+title: "[SFML] 윈도우 열기"
 categories: [SFML]
 tags: [SFML 기초]
 background: ''
 ---
 # SFML에서 윈도우를 여는법
-다음과 같이 RenderWindow 윈도우이름()으로 렌더러를 정의합니다.
+다음과 같이 RenderWindow 윈도우이름()으로 렌더러를 정의합니다..
 ```c++
 sf::RenderWindow window();
 /**

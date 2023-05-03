@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "SFML 도형 그리기, 더블 버퍼링"
+title: "[SFML] 도형 그리기, 더블 버퍼링"
 date: "2023-05-03 22:10:20 -0400"
 categories: [SFML]
 tags: [SFML 기초]

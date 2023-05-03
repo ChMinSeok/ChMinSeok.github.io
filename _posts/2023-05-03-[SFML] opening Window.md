@@ -1,6 +1,7 @@
 ---
 layout: single
-title: "[SFML] 윈도우 열기"
+title: "[SFML] 윈도우 열기 "
+date: "2023-05-03 20:10:20 -0400"
 categories: [SFML]
 tags: [SFML 기초]
 background: ''

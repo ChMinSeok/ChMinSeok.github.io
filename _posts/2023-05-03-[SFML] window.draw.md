@@ -1,12 +1,12 @@
 ---
 layout: single
-title: "[SFML] 도형 그리기, 더블 버퍼링"
-date: "2023-05-03 22:10:20 -0400"
+title: "[SFML] 도형 그리기, 더블 버퍼링 "
+date: "date: 2023-05-04 01:00:00 +0900"
 categories: [SFML]
 tags: [SFML 기초]
 background: ''
 ---
-## 도형 RectangleShape정의
+## 도형 RectangleShape정의.
 ```c++
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -41,7 +41,7 @@ int main()
     
       
 
-이 구문을 사용하여 player라는 이름을 가진 도형 객체를 만들었다.
+이 구문을 사용하여 player라는 이름을 가진 도형 객체를 만들었다..
   
 
 ## SFML에서의 더블 버퍼링

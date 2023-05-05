@@ -1,0 +1,106 @@
+---
+layout: single
+title: "BOJ 13397 C++ "
+subtitle: "Problem Solving"
+date: "date: 2023-05-05 21:05:00 +0900"
+categories: [Baekjoon]
+tags: [Binary Search]
+background: ''
+---
+  
+# 백준 13397 C++ 풀이
+
+## 문제 접근
+배열을 pair로 받아 정렬하고
+메뉴 배열을 정렬하고  
+좋아하는 매운맛 혹은 단맛 구간의 최소 인덱스와 최대인덱스를 구하여 그 메뉴 구간을 돌면서 다른맛의 조건에도 해당하나 확인하고 둘다 해당되면 카운트한다. 
+## 코드
+```c++
+#include <bits/stdc++.h> 
+#define ll long long
+#define u s[i].first
+#define v s[i].second
+#define x yu[i].first
+#define y yu[i].second
+#define karai menus[i].first
+#define amai menus[i].second
+using namespace std;
+
+int ebun_low(const vector<pair<int,int>>& menus, int val)
+{
+	int lo = 0;
+	int hi = menus.size() - 1;
+	while (lo <= hi)
+	{
+		int mid = (lo + hi) / 2;
+		if (val > menus[mid].first)
+		{
+			lo = mid + 1;
+		}
+		else
+		{
+			hi = mid - 1;
+		}
+	}
+	return lo;
+}
+int ebun_up(const vector<pair<int, int>>& menus, int val)
+{
+	int lo = 0;
+	int hi = menus.size() - 1;
+	while (lo <= hi)
+	{
+		int mid = (lo + hi) / 2;
+		if (val >= menus[mid].first)
+		{
+			lo = mid + 1;
+		}
+		else
+		{
+			hi = mid - 1;
+		}
+	}
+	return lo;
+}
+
+void solve(const vector<pair<int,int>> &menus, const vector<pair<int, int>> &s, const vector<pair<int, int>>& yu)
+{
+	int size = s.size();
+	for (int i = 0; i < size; i++)
+	{
+		int lo = ebun_low(menus, u);
+		int hi = ebun_up(menus, v);
+		int cnt = 0;
+		for (int j = lo; j < hi; j++)
+		{
+			if (x <= menus[j].second && menus[j].second <= y)
+				cnt++;
+		}
+		cout << cnt << "\n";
+	}
+}
+
+
+int main()
+{
+	cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+	int n, q; cin >> n >> q;
+	vector<pair<int, int>> menus(n);
+	for (int i = 0; i < n; i++)
+	{
+		cin >> karai >> amai;
+	}
+	sort(menus.begin(), menus.end());
+	vector<pair<int, int >> s(q);
+	vector<pair<int, int >> yu(q);
+	for (int i = 0; i < q; i++)
+	{
+		cin >> u >> v >> x >> y;
+	}
+	solve(menus,s, yu);
+
+}
+```
+
+

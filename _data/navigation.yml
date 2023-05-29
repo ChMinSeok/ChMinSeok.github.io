@@ -6,9 +6,18 @@ main:
     url: /tags/
   - title: "Youtube"
     url: https://www.youtube.com/channel/UCrWBjySeKjUPK_H1l8PZHhQ
+  - title: "Search"
+    url: /search/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+  docs:
+  - title: "대목차"
+    children:
+      - title: "Category"
+      - url: /categories/
+      - title: "Tag"
+      - url: /tags/

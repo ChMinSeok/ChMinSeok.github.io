@@ -271,3 +271,208 @@ int main()
 	return 0;
 }
 ```
+## 연결리스트 뒤집기 reverse
+```c++
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+class Node
+{
+public:
+	int data;
+	Node* next;
+};
+
+void printList(Node* head)
+{
+	Node* cursor = new Node();
+	if (head == NULL)
+		cout << "Head is Null";
+	else
+	{
+
+		cout << "List is: ";
+		cursor = head;
+		while (cursor != NULL)
+		{
+			cout << cursor->data << " ";
+			cursor = cursor->next;
+		}
+		cout << "\n";
+	}
+}
+void reverse(Node** head)
+{
+	Node* next, * prev, *current = new Node();
+	current = *head;
+	prev = NULL;
+	while (current != NULL)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	*head = prev;
+}
+void insert(Node** head, int new_data, int n)
+{
+	Node* new_node = new Node();
+	new_node->data = new_data;
+	new_node->next = NULL;
+	if (n == 1)
+	{
+		new_node->next = *head;
+		*head = new_node;
+		return;
+	}
+	Node* prevN = *head;
+	for (int i = 0; i < n - 2; i++)
+	{
+		prevN = prevN->next;
+	}
+	new_node->next = prevN->next;
+	prevN->next = new_node;
+}
+
+void deleteNode(Node** head, int n)
+{
+	Node* cursor = *head;
+	if (n == 1)
+	{
+		*head = cursor->next;
+		delete cursor;
+		return;
+	}
+	for (int i = 0; i < n - 2; i++)
+	{
+		cursor = cursor->next;
+	}
+	Node* index = new Node();
+	index = cursor->next;
+	cursor->next = index->next;
+	delete index;
+}
+int main() 
+{
+	Node* head = new Node();
+	head = NULL;
+	insert(&head, 1, 1); //List: 1
+	insert(&head, 4, 2); //List: 1,4
+	insert(&head, 5, 3); //List: 1,4,5
+	insert(&head, 9, 1); //List: 9,1,4,5
+	printList(head);
+	deleteNode(&head, 1);
+	printList(head);
+	reverse(&head);
+	printList(head);
+	return 0;
+}
+```
+## 연결리스트에서 재귀 출력 리버스 출력 리버스를 재귀로 구현
+```c++
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+class Node
+{
+public:
+	int data;
+	Node* next;
+};
+
+void printList(Node* p)
+{
+	if (p == NULL)
+	{
+		cout << '\n';
+		return;
+	}
+	cout << p->data << " ";
+	printList(p->next);
+}
+void reverse_printList(Node* p)
+{
+	if (p == NULL)
+	{
+		return;
+	}
+	reverse_printList(p->next);
+	cout << p->data << " ";
+}
+void reverse(Node** head,Node *p)
+{
+	if (p->next == NULL)
+	{
+		*head = p;
+		return;
+	}
+	reverse(head ,p->next);
+	Node* next = p->next;
+	next->next = p;
+	p->next = NULL;
+}
+void insert(Node** head, int new_data, int n)
+{
+	Node* new_node = new Node();
+	new_node->data = new_data;
+	new_node->next = NULL;
+	if (n == 1)
+	{
+		new_node->next = *head;
+		*head = new_node;
+		return;
+	}
+	Node* prevN = *head;
+	for (int i = 0; i < n - 2; i++)
+	{
+		prevN = prevN->next;
+	}
+	new_node->next = prevN->next;
+	prevN->next = new_node;
+}
+
+void deleteNode(Node** head, int n)
+{
+	Node* cursor = *head;
+	if (n == 1)
+	{
+		*head = cursor->next;
+		delete cursor;
+		return;
+	}
+	for (int i = 0; i < n - 2; i++)
+	{
+		cursor = cursor->next;
+	}
+	Node* index = new Node();
+	index = cursor->next;
+	cursor->next = index->next;
+	delete index;
+}
+int main() 
+{
+	Node* head = new Node();
+	head = NULL;
+	insert(&head, 1, 1); //List: 1
+	insert(&head, 4, 2); //List: 1,4
+	insert(&head, 5, 3); //List: 1,4,5
+	insert(&head, 9, 1); //List: 9,1,4,5
+	printList(head);
+	deleteNode(&head, 1);
+	printList(head);
+	reverse(&head,head);
+	printList(head);
+	reverse_printList(head);
+	/* 총 출력
+	* 9 1 4 5
+	1 4 5
+	5 4 1
+	1 4 5
+	*/
+	return 0;
+}
+
+```

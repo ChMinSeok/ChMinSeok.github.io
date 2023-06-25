@@ -2,7 +2,7 @@
 layout: single
 title: "C/C++ 단일연결리스트"
 date: "date: 2023-06-22 12:33:00 +0900"
-categories: [C++]
+categories: [C++, Data Structures]
 tags: [Data Structures]
 background: ''
 ---

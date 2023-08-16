@@ -46,13 +46,11 @@ background: ''
 
 using namespace std;
 
-int dx[4] = {0, 1, -1, 0};
-int dy[4] = {1, 0, 0, -1};
-int d[2] = {1, -1};
 
 bool isSquere(long long x)
 {
     return sqrt(x) == (ll)sqrt(x);
+    //제곱수인지 확인
 }
 
 int main(void)
